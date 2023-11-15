@@ -108,7 +108,7 @@ class LoginPage extends StatelessWidget {
                     SizedBox(
                       height: 20, // Ajuste o espaçamento conforme necessário
                     ),
-                    OutlinedButton(
+                    ElevatedButton(
                       onPressed: () {},
                       child: Text(
                         'Entrar',

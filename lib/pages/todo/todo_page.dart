@@ -13,8 +13,11 @@ class _TodoPageState extends State<TodoPage> {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+
       theme: ThemeData(
           scaffoldBackgroundColor: const Color.fromRGBO(169, 1, 247, 1)),
+
+      theme: ThemeData(scaffoldBackgroundColor: const Color.fromRGBO(169, 1, 247, 1)),
       home: Scaffold(
         body: Column(
           children: [
@@ -31,6 +34,9 @@ class _TodoPageState extends State<TodoPage> {
                           bottomLeft: Radius.zero,
                           bottomRight: Radius.circular(200)),
                       color: Colors.white),
+
+                  decoration: const BoxDecoration(borderRadius: BorderRadius.only(topLeft: Radius.zero, topRight: Radius.zero, bottomLeft: Radius.zero, bottomRight: Radius.circular(200)), color: Colors.white),
+
                 ),
                 const Padding(
                   padding: EdgeInsets.fromLTRB(10, 10, 0, 0),
@@ -50,6 +56,8 @@ class _TodoPageState extends State<TodoPage> {
                           color: Colors.white,
                           fontWeight: FontWeight.w600,
                           letterSpacing: 1.0),
+
+                      style: GoogleFonts.montserrat(fontSize: 20, color: Colors.white, fontWeight: FontWeight.w600, letterSpacing: 1.0),
                     ),
                   ),
                 ),
@@ -76,6 +84,12 @@ class _TodoPageState extends State<TodoPage> {
                             borderSide: BorderSide.none,
                             borderRadius:
                                 BorderRadius.all(Radius.circular(16))),
+
+                        hintStyle: TextStyle(fontFamily: 'Tahoma', fontSize: 18, color: Color.fromRGBO(49, 1, 185, 1), fontWeight: FontWeight.w400),
+                        filled: true,
+                        fillColor: Colors.white,
+                        border: OutlineInputBorder(borderSide: BorderSide.none, borderRadius: BorderRadius.all(Radius.circular(16))),
+
                         suffixIcon: Icon(
                           Icons.search,
                           color: Color.fromRGBO(49, 1, 185, 1),
@@ -88,14 +102,15 @@ class _TodoPageState extends State<TodoPage> {
                     child: Card(
                       shape: const RoundedRectangleBorder(
                           borderRadius: BorderRadius.all(Radius.circular(22))),
-                      child: ListTile(
+
+                      shape: const RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(22))),
+                     child: ListTile(
                         contentPadding: EdgeInsets.all(17),
                         tileColor: const Color.fromRGBO(255, 242, 204, 100),
                         trailing: const Icon(
                           Icons.delete_outline,
                           color: Color.fromRGBO(49, 1, 185, 1),
-                        ),
-                        title: Text('Limpar a casa',
+                                    title: Text('Limpar a casa',
                             style: GoogleFonts.montserrat(
                                 fontSize: 17,
                                 color: Color.fromRGBO(49, 1, 185, 1),
@@ -111,6 +126,11 @@ class _TodoPageState extends State<TodoPage> {
                         shape: const RoundedRectangleBorder(
                             borderRadius:
                                 BorderRadius.all(Radius.circular(22))),
+
+                        title: Text('Limpar a casa', style: GoogleFonts.montserrat(fontSize: 17, color: Color.fromRGBO(49, 1, 185, 1), fontWeight: FontWeight.w700, letterSpacing: 1.0)),
+                        subtitle: Text('Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore ‘erat volutpat. Ut wisi enim ad minim veniam', style: GoogleFonts.montserrat(fontSize: 12, color: Color.fromRGBO(49, 1, 185, 1), fontWeight: FontWeight.w500, letterSpacing: 1.0)),
+                        shape: const RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(22))),
+
                       ),
                     ),
                   ),
@@ -144,7 +164,21 @@ class _TodoPageState extends State<TodoPage> {
                                 BorderRadius.all(Radius.circular(22))),
                       ),
                     ),
-                  ),
+                        shape: const RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(22))),
+                        child: ListTile(
+                          contentPadding: EdgeInsets.all(17),
+                          tileColor: const Color.fromRGBO(199,255,203, 100),
+                          trailing: const Icon(
+                            Icons.delete_outline,
+                            color: Color.fromRGBO(49, 1, 185, 1),
+                          ),
+                          title: Text('Limpar a casa', style: GoogleFonts.montserrat(fontSize: 17, color: Color.fromRGBO(49, 1, 185, 1), fontWeight: FontWeight.w700, letterSpacing: 1.0)),
+                          subtitle: Text('Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore ‘erat volutpat. Ut wisi enim ad minim veniam', style: GoogleFonts.montserrat(fontSize: 12, color: Color.fromRGBO(49, 1, 185, 1), fontWeight: FontWeight.w500, letterSpacing: 1.0)),
+                          shape: const RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(22))),
+                        ),
+                      ),
+
+                 ),
                   Padding(
                     padding: const EdgeInsets.only(top: 10),
                     child: Card(
@@ -175,6 +209,21 @@ class _TodoPageState extends State<TodoPage> {
                                 BorderRadius.all(Radius.circular(22))),
                       ),
                     ),
+
+                        shape: const RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(22))),
+                        child: ListTile(
+                          contentPadding: EdgeInsets.all(17),
+                          tileColor: const Color.fromRGBO(	232, 197, 255, 100),
+                          trailing: const Icon(
+                            Icons.delete_outline,
+                            color: Color.fromRGBO(49, 1, 185, 1),
+                          ),
+                          title: Text('Limpar a casa', style: GoogleFonts.montserrat(fontSize: 17, color: Color.fromRGBO(49, 1, 185, 1), fontWeight: FontWeight.w700, letterSpacing: 1.0)),
+                          subtitle: Text('Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore ‘erat volutpat. Ut wisi enim ad minim veniam', style: GoogleFonts.montserrat(fontSize: 12, color: Color.fromRGBO(49, 1, 185, 1), fontWeight: FontWeight.w500, letterSpacing: 1.0)),
+                          shape: const RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(22))),
+                        ),
+                      ),
+
                   ),
                   const Padding(
                     padding: EdgeInsets.only(top: 30),
@@ -183,6 +232,7 @@ class _TodoPageState extends State<TodoPage> {
                       size: 100,
                       color: Colors.white,
                     ),
+                      ),
                   )
                 ],
               ),

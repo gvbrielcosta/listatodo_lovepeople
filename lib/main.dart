@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:listatodo_lovepeople/pages/login/login_page.dart';
-import 'package:listatodo_lovepeople/pages/signup/signup_page.dart';
+
 
 void main() {
   runApp(const MyApp());
@@ -18,7 +17,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.purple),
       ),
-      home: const LoginPage(),
+
     );
   }
 }

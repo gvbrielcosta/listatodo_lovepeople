@@ -1,17 +1,10 @@
 import 'package:flutter/material.dart';
 
-class LoginPage extends StatefulWidget {
-  const LoginPage({Key? key}) : super(key: key);
-
-  @override
-  State<LoginPage> createState() => _LoginPageState();
-}
-
-class _LoginPageState extends State<LoginPage> {
+class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromRGBO(178, 73, 227, 1),
+      backgroundColor: Color.fromRGBO(169, 1, 247, 1),
       body: SingleChildScrollView(
         child: SizedBox(
           width: MediaQuery.of(context).size.width,
@@ -24,29 +17,38 @@ class _LoginPageState extends State<LoginPage> {
                 Container(
                   height: 300,
                   decoration: const BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.only(
-                          bottomLeft: Radius.circular(400),
-                          bottomRight: Radius.circular(400),
-                          topLeft: Radius.zero,
-                          topRight: Radius.zero)),
+                    color: Colors.white,
+                    borderRadius: BorderRadius.only(
+                      bottomLeft: Radius.circular(400),
+                      bottomRight: Radius.circular(400),
+                    ),
+                  ),
                 ),
                 Positioned(
                   top: 100,
-                  child: Image.network(
-                    'https://cdn-fhadf.nitrocdn.com/ZposurrhgpMNIxJkJSDhfrsVaOicbFuO/assets/images/optimized/rev-bb4d11b/www.lovepeople.com.br/wp-content/uploads/2021/02/favicon-lovepeople.png',
+                  child: Image(
+                    image: AssetImage('assets/images/lovepeople_logo.png'),
                     height: 150,
                   ),
                 ),
                 Positioned(
-                  top: 300,
+                  top: 250,
+                  child: const Text(
+                    'LovePeople',
+                    style: TextStyle(
+                      color: Color.fromRGBO(169, 1, 247, 1),
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+                Positioned(
+                  top: 330,
                   child: Text(
                     'Que bom que voltou!',
                     style: TextStyle(
                       color: Colors.white,
-                      fontSize:
-                          34.0, // Ajuste o tamanho da fonte conforme necessário
-                      fontWeight: FontWeight.bold, // Adiciona negrito ao texto
+                      fontSize: 34.0,
+                      fontWeight: FontWeight.bold,
                     ),
                   ),
                 ),
@@ -54,10 +56,9 @@ class _LoginPageState extends State<LoginPage> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     SizedBox(
-                      height: 200,
+                      height: 270,
                     ),
                     TextField(
-                      keyboardType: TextInputType.emailAddress,
                       decoration: InputDecoration(
                         filled: true,
                         fillColor: Colors.white,
@@ -68,7 +69,7 @@ class _LoginPageState extends State<LoginPage> {
                       ),
                     ),
                     SizedBox(
-                      height: 30,
+                      height: 20, // Ajuste o espaçamento conforme necessário
                     ),
                     TextField(
                       obscureText: true,
@@ -82,13 +83,81 @@ class _LoginPageState extends State<LoginPage> {
                       ),
                     ),
                     SizedBox(
-                      height: 30,
+                      height: 20,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 15),
+                      child: Row(
+                        children: [
+                          Text(
+                            'Esqueceu seu Login ou Senha?',
+                            style: TextStyle(
+                              color: Colors.white,
+                            ),
+                          ),
+                          SizedBox(width: 5),
+                          Text(
+                            'Clique Aqui!',
+                            style: TextStyle(
+                              color: Colors.yellow,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    SizedBox(
+                      height: 20, // Ajuste o espaçamento conforme necessário
                     ),
                     OutlinedButton(
                       onPressed: () {},
-                      child: Text('Login'),
+                      child: Text(
+                        'Entrar',
+                        style: TextStyle(color: Colors.white),
+                      ),
+                      style: ButtonStyle(
+                        backgroundColor: MaterialStateProperty.all<Color>(
+                          Color.fromARGB(255, 3, 79, 145),
+                        ),
+                      ),
                     ),
                   ],
+                ),
+                Padding(
+                  padding: EdgeInsets.only(bottom: 25),
+                  child: Align(
+                    alignment: Alignment.bottomCenter,
+                    child: Container(
+                      child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Divider(
+                            color: Colors.yellow,
+                            thickness: 1.0,
+                            height: 40,
+                          ),
+                          SizedBox(height: 5),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(
+                                'Não possui cadastro?',
+                                style: TextStyle(
+                                  color: Colors.white,
+                                ),
+                              ),
+                              SizedBox(width: 5),
+                              Text(
+                                'Clique Aqui!',
+                                style: TextStyle(
+                                  color: Colors.yellow,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
                 ),
               ],
             ),

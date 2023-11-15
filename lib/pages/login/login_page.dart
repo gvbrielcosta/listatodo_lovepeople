@@ -1,66 +1,169 @@
 import 'package:flutter/material.dart';
 
-class LoginPage extends StatefulWidget {
-  const LoginPage({super.key});
-
-  @override
-  State<LoginPage> createState() => _LoginPageState();
-}
-
-class _LoginPageState extends State<LoginPage> {
+class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Color.fromARGB(255, 232, 184, 240),
-        body: SingleChildScrollView(
-          child: SizedBox(
-            width: MediaQuery.of(context).size.width,
-            height: MediaQuery.of(context).size.height,
-            child: Container(
-              decoration: BoxDecoration(
-                gradient: LinearGradient(
-                  begin: Alignment.topCenter,
-                  end: Alignment.bottomCenter,
-                  colors: [Colors.white, Color.fromARGB(255, 232, 184, 240)],
+      backgroundColor: Color.fromRGBO(169, 1, 247, 1),
+      body: SingleChildScrollView(
+        child: SizedBox(
+          width: MediaQuery.of(context).size.width,
+          height: MediaQuery.of(context).size.height,
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Stack(
+              alignment: AlignmentDirectional.topCenter,
+              children: [
+                Container(
+                  height: 300,
+                  decoration: const BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.only(
+                      bottomLeft: Radius.circular(400),
+                      bottomRight: Radius.circular(400),
+                    ),
+                  ),
                 ),
-              ),
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Column(
+                Positioned(
+                  top: 100,
+                  child: Image(
+                    image: AssetImage('assets/images/lovepeople_logo.png'),
+                    height: 150,
+                  ),
+                ),
+                Positioned(
+                  top: 250,
+                  child: const Text(
+                    'LovePeople',
+                    style: TextStyle(
+                      color: Color.fromRGBO(169, 1, 247, 1),
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+                Positioned(
+                  top: 330,
+                  child: Text(
+                    'Que bom que voltou!',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 34.0,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+                Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Padding(
-                      padding: const EdgeInsets.only(bottom: 8.0),
-                      child: Icon(
-                        Icons.login,
-                        size: 40.0,
+                    SizedBox(
+                      height: 270,
+                    ),
+                    TextField(
+                      decoration: InputDecoration(
+                        filled: true,
+                        fillColor: Colors.white,
+                        labelText: 'Número de telefone, email ou CPF',
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(100),
+                        ),
                       ),
                     ),
                     SizedBox(
-                      height: 30,
-                    ),
-                    TextField(
-                      keyboardType: TextInputType.emailAddress,
-                      decoration: InputDecoration(
-                          labelText: 'Email', border: OutlineInputBorder()),
-                    ),
-                    SizedBox(
-                      height: 30,
+                      height: 20, // Ajuste o espaçamento conforme necessário
                     ),
                     TextField(
                       obscureText: true,
                       decoration: InputDecoration(
-                          labelText: 'Password', border: OutlineInputBorder()),
+                        filled: true,
+                        fillColor: Colors.white,
+                        labelText: 'Senha',
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(100),
+                        ),
+                      ),
                     ),
                     SizedBox(
-                      height: 30,
+                      height: 20,
                     ),
-                    OutlinedButton(onPressed: () {}, child: Text('Login'))
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 15),
+                      child: Row(
+                        children: [
+                          Text(
+                            'Esqueceu seu Login ou Senha?',
+                            style: TextStyle(
+                              color: Colors.white,
+                            ),
+                          ),
+                          SizedBox(width: 5),
+                          Text(
+                            'Clique Aqui!',
+                            style: TextStyle(
+                              color: Colors.yellow,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    SizedBox(
+                      height: 20, // Ajuste o espaçamento conforme necessário
+                    ),
+                    ElevatedButton(
+                      onPressed: () {},
+                      child: Text(
+                        'Entrar',
+                        style: TextStyle(color: Colors.white),
+                      ),
+                      style: ButtonStyle(
+                        backgroundColor: MaterialStateProperty.all<Color>(
+                          Color.fromARGB(255, 3, 79, 145),
+                        ),
+                      ),
+                    ),
                   ],
                 ),
-              ),
+                Padding(
+                  padding: EdgeInsets.only(bottom: 25),
+                  child: Align(
+                    alignment: Alignment.bottomCenter,
+                    child: Container(
+                      child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Divider(
+                            color: Colors.yellow,
+                            thickness: 1.0,
+                            height: 40,
+                          ),
+                          SizedBox(height: 5),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(
+                                'Não possui cadastro?',
+                                style: TextStyle(
+                                  color: Colors.white,
+                                ),
+                              ),
+                              SizedBox(width: 5),
+                              Text(
+                                'Clique Aqui!',
+                                style: TextStyle(
+                                  color: Colors.yellow,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ],
             ),
           ),
-        ));
+        ),
+      ),
+    );
   }
 }

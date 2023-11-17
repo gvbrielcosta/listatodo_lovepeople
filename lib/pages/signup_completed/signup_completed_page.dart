@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class SignUpCompleted extends StatelessWidget {
+class SignUpCompleted extends StatefulWidget {
   const SignUpCompleted({super.key});
 
+  @override
+  State<SignUpCompleted> createState() => _SignUpCompletedState();
+}
+
+class _SignUpCompletedState extends State<SignUpCompleted> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -27,7 +32,7 @@ class SignUpCompleted extends StatelessWidget {
                     ),
                   ),
                   ElevatedButton(
-                      onPressed: () {},
+                      onPressed: goHome,
                       style: ElevatedButton.styleFrom(
                           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
                           backgroundColor: const Color.fromRGBO(49, 1, 185, 1),
@@ -71,5 +76,11 @@ class SignUpCompleted extends StatelessWidget {
             ),
           ],
         ))));
+  }
+
+  void goHome() {
+    if (context.mounted) {
+      Navigator.of(context).pushNamedAndRemoveUntil('/home', (route) => false);
+    }
   }
 }

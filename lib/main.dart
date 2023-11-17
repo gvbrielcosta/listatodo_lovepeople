@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:listatodo_lovepeople/data/model/todo_response.dart';
 import 'package:listatodo_lovepeople/pages/login/login_page.dart';
 import 'package:listatodo_lovepeople/pages/signup/signup_page.dart';
+import 'package:listatodo_lovepeople/pages/signup_completed/signup_completed_page.dart';
 import 'package:listatodo_lovepeople/pages/todo/todo_page.dart';
 
 const String baseUrl = 'https://todo.rafaelbarbosatec.com/api/';
@@ -34,6 +34,9 @@ class MyHome extends StatelessWidget {
       routes: {
         '/': (context) => LoginPage(),
         '/home': (context) => const TodoPage(),
+        '/signup': (context) => const SignUpPage(),
+        '/signupcompleted': (context) => const SignUpCompleted(),
+        
       }
 
     );

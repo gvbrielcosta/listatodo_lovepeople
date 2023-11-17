@@ -143,12 +143,6 @@ class _LoginPageState extends State<LoginPage> {
                         padding: EdgeInsets.fromLTRB(25, 0, 0, 0),
                         child: Row(
                           children: [
-                            Text(
-                              'Esqueceu seu Login ou Senha?',
-                              style: TextStyle(
-                                color: Colors.white,
-                              ),
-                            ),
                             SizedBox(width: 5),
                             Text(
                               'Clique Aqui!',
@@ -189,31 +183,36 @@ class _LoginPageState extends State<LoginPage> {
                   child: Align(
                     alignment: Alignment.bottomCenter,
                     child: Container(
-                      child: const Column(
+                      child: Column(
                         mainAxisSize: MainAxisSize.min,
                         children: [
-                          Divider(
+                          const Divider(
                             color: Colors.yellow,
                             thickness: 1.0,
                             height: 40,
                           ),
-                          SizedBox(height: 5),
+                          const SizedBox(height: 5),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              Text(
-                                'Não possui cadastro?',
-                                style: TextStyle(
-                                  color: Colors.white,
+                              const Padding(
+                                padding: EdgeInsets.only(right: 6),
+                                child: Text(
+                                  'Não possui cadastro?',
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                  ),
                                 ),
                               ),
-                              SizedBox(width: 5),
-                              Text(
-                                'Clique Aqui!',
-                                style: TextStyle(
-                                  color: Colors.yellow,
+                              GestureDetector(
+                                onTap: _goSignUp,
+                                child: const Text(
+                                  'Clique Aqui!',
+                                  style: TextStyle(
+                                    color: Colors.yellow,
+                                  ),
                                 ),
-                              ),
+                              )
                             ],
                           ),
                         ],
@@ -252,6 +251,12 @@ class _LoginPageState extends State<LoginPage> {
   void _goHome() {
     if (context.mounted) {
       Navigator.of(context).pushNamedAndRemoveUntil('/home', (route) => false);
+    }
+  }
+
+  void _goSignUp() {
+    if (context.mounted) {
+      Navigator.of(context).pushNamedAndRemoveUntil('/signup', (route) => false);
     }
   }
 }

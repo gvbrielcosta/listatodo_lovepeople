@@ -2,8 +2,11 @@ import 'package:flutter/material.dart';
 
 class RemoverTarefa extends StatefulWidget {
   final VoidCallback onRemover;
+  final String ConfirmRemover;
 
-  const RemoverTarefa({Key? key, required this.onRemover}) : super(key: key);
+  const RemoverTarefa(
+      {Key? key, required this.onRemover, required this.ConfirmRemover})
+      : super(key: key);
 
   @override
   State<RemoverTarefa> createState() => _RemoverTarefaState();
@@ -20,7 +23,8 @@ class _RemoverTarefaState extends State<RemoverTarefa> {
           builder: (BuildContext context) {
             return AlertDialog(
               title: Text('Deseja deletar este Item?'),
-              content: Text('Será removido para a lixeira!'),
+              content: Text(
+                  'O item "${widget.ConfirmRemover}" será removido para a lixeira!'),
               actions: [
                 TextButton(
                   onPressed: () {

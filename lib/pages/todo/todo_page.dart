@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:listatodo_lovepeople/pages/removertarefa/RemoverTarefa_page.dart';
+import 'package:listatodo_lovepeople/pages/removertarefa/RemoverTarefa_controller.dart';
 
 class TodoPage extends StatefulWidget {
   const TodoPage({Key? key}) : super(key: key);
@@ -110,6 +110,7 @@ class _TodoPageState extends State<TodoPage> {
                               : const Color.fromRGBO(199, 255, 203, 100),
                           trailing: RemoverTarefa(
                             onRemover: () => removerTarefa(i),
+                            ConfirmRemover: tarefas[i],
                           ),
                           title: Text(
                             tarefas[i],

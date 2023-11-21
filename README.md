@@ -1,16 +1,13 @@
 # listatodo_lovepeople
 
-A new Flutter project.
+Um projeto realizado durante o curso de Flutter da Lovepeople. (@lovepeoeplebr no Instagram)
 
-## Getting Started
+Nesse projeto, fomos desafiados a criar um aplicativo de uma lista de coisas a fazer. 
 
-This project is a starting point for a Flutter application.
+O projeto consiste em 5 telas de navegação e um CRUD realizado na API disponibilizada pelo professor Rafael. 
 
-A few resources to get you started if this is your first Flutter project:
+Também foi proposto que seguíssemos a metodologia ágil Scrum, da qual seguimos à risca, realizando dailys, sprints, scrum review e scrum retrospective, tentando simular o máximo um ambiente de trabalho ideal.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+Seguimos ao máximo o fluxo de trabalho de um desenvolvedor real, trabalhando com um repositório remoto onde foi realizado diversas Pull Requests e todos trabalharam em branchs diferentes.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Foi um projeto onde aprendemos muito e também fomos muito desafiados.
